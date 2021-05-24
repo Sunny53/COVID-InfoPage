@@ -72,6 +72,10 @@ input, select, textarea {
 	appearance: none;
 }
 
+#logo {
+	font-size: x-large;
+}
+
 /* Basic */
 
 	html {
