@@ -1,32 +1,25 @@
-Arcana by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+#COVID InfoPage
 
+##Intro
 
-A business/corporate style responsive site template. It's pretty barebones but should
-go over pretty well for folks wanting to get their serious business on.
+This is a site with information regarding COVID-19 cases in Savannah, GA.
+Purpose was an easier access to daily numbers and recent news concerning COVID.
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+##Content
 
-(* = Not included)
+*Counts of covid-19-related deaths and cases in each county in Georgia. Interactive map and table.
+*Safety Precautions and flyers. 
+*Recent News regarding covid-19.
+*Local and national resources for more information.
+*Contact form.
 
-Feedback, bug reports, and comments are not only welcome, but strongly encouraged :)
+##Resources
 
-AJ
-aj@lkn.io | @ajlkn
+*Georgia Department of Public Health
+*Centers for Disease Control and Prevention
+*Worldometers
+*World Health Organization
 
-PS: Not sure how to get that contact form working? Give formspree.io a try (it's awesome).
+#Author
 
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+**Sunny Patel**
