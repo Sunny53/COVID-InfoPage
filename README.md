@@ -1,5 +1,5 @@
 # COVID InfoPage
-## [https://sunny53.github.io/COVID-InfoPage/](https://sunny53.github.io/COVID-InfoPage/)
+## [sunny53.github.io/COVID-InfoPage/](https://sunny53.github.io/COVID-InfoPage/)
 ## Intro
 
 This is a site with information regarding COVID-19 cases in Savannah, GA.
