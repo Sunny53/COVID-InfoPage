@@ -76,6 +76,28 @@ input, select, textarea {
 	font-size: x-large;
 }
 
+/* Stat container */
+.stat__container{
+	display: flex;
+	justify-content: space-around;
+	flex-flow: row wrap;
+	max-width: 600px;
+	margin: auto;
+  }
+  
+  .stat__cases, .stat__deaths, #population{
+	text-align: center;
+  }
+  
+  #stat__header{
+
+  }
+
+
+
+
+
+
 /* Basic */
 
 	html {
