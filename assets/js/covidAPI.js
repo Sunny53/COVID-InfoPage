@@ -10,6 +10,7 @@ var cbsa_code = "42340"
 var url = `https://api.covidactnow.org/v2/cbsa/${cbsa_code}.json?apiKey=${API_key}`
 console.log(url)
 
+//Getting data from covidactnow
 fetch(url, {
 	method: 'GET'
 })
