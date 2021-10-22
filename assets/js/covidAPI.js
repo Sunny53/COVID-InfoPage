@@ -10,7 +10,7 @@ var cbsa_code = "42340"
 var url = `https://api.covidactnow.org/v2/cbsa/${cbsa_code}.json?apiKey=${API_key}`
 console.log(url)
 
-//Getting data from covidactnow
+//Getting data from covidactnow API
 fetch(url, {
 	method: 'GET'
 })
@@ -33,3 +33,45 @@ fetch(url, {
   newDeaths.innerText = "New: " + json.actuals.newDeaths;
 })
 
+
+
+//Getting Data from Gnews API
+
+//Html elements
+
+
+//APi parameters
+const api_key = "870061f7bf29680986c7953224cb9bd3";
+const q = 'coronavirus savannah';
+const url1 = `https://gnews.io/api/v4/search?q=${q}&max=5&country=us&lang=en&token=${api_key}`
+console.log(url);
+
+let newsContainer = document.getElementById("news__container");
+
+//API call
+fetch(url1)
+  .then(response => response.json())
+  .then(data => {
+    data.articles.map(i => {
+
+      console.log(i.title);
+
+      //let a = document.createElement("")
+
+      let newsArticle = document.createElement("div");
+      newsArticle.classList.add('news__article');
+      
+      newsArticle.innerHTML =
+        `<h3 class="article__title">${i.title}</h3>
+            <img class="article__img" 
+             alt="Article Image"	src=${i.image}></img>
+            <p class="article__body">${i.description}</p>
+            <a href=${i.url} target="blank" class="button">Read More</a>
+            `;
+
+      newsContainer.appendChild(newsArticle);
+
+    })
+  })
+
+  .catch(error => console.log("Error:", error))

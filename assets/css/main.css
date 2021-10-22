@@ -2428,7 +2428,7 @@ input, select, textarea {
 		display: inline-block;
 		padding: 0 1.5em;
 		line-height: 2.75em;
-		min-width: 9em;
+		width: 100%;
 		text-align: center;
 		text-decoration: none;
 		font-weight: 600;
@@ -3386,7 +3386,7 @@ input, select, textarea {
 	margin-bottom: 80px;
 	border-radius: 10px;
 	background:#f0f3ff;
-	box-shadow: 2px 2px 10px #999 ;
+	box-shadow: 2px 2px 10px #1f1f1f ;
   }
   
   .stat__cases, .stat__deaths{
@@ -3396,5 +3396,28 @@ input, select, textarea {
   #totalCases, #newCases, #totalDeaths, #newDeaths{
 	border:#1f1f1f solid 1px;
 	padding: 5px;
-	box-shadow: 2px 2px 10px #999 ;
+	box-shadow: 2px 2px 10px #1f1f1f ;
+  }
+
+  /*News container */
+  .news__article{
+	margin: 10px;
+	padding: 10px;
+	background:#f0f3ff;
+	border-radius: 10px;
+	box-shadow: 1px 1px 10px #1f1f1f;
+  }
+  
+  .article__img{
+	max-width:100%;
+  }
+
+  .article__title{
+	  border-bottom: black solid 1px;
+	  background-color: #37c0fb;
+	  color: whitesmoke;
+	  margin: 0;
+	  padding: 8px;
+	  border-top-left-radius: 5px;
+	  border-top-right-radius: 5px;
   }
