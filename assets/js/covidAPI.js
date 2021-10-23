@@ -56,7 +56,6 @@ fetch(url1)
 
       console.log(i.title);
 
-      //let a = document.createElement("")
 
       let newsArticle = document.createElement("div");
       newsArticle.classList.add('news__article');
@@ -75,3 +74,5 @@ fetch(url1)
   })
 
   .catch(error => console.log("Error:", error))
+
+  
