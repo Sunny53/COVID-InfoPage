@@ -3393,9 +3393,7 @@ input, select, textarea {
 	text-align: center;
   }
   
-  #totalCases, #newCases, #totalDeaths, #newDeaths{
-	
-  }
+  
 
   /*News container */
   .news__article{
@@ -3403,7 +3401,7 @@ input, select, textarea {
 	padding: 10px;
 	background:#f0f3ff;
 	border-radius: 10px;
-	box-shadow: 1px 1px 10px #1f1f1f;
+	box-shadow: 1px 1px 5px #1f1f1f;
   }
   
   .article__img{
@@ -3431,7 +3429,7 @@ input, select, textarea {
 	background-color: #f0f3ff;
 	border-radius: 1.5rem;
 	overflow: hidden;
-	box-shadow: 2px 2px 10px #333;
+	box-shadow: 1px 1px 5px #333;
   }
   
   .carouselImgs {

@@ -20,7 +20,9 @@ fetch(url, {
 .then(json=>{
 
 	console.log(json.population);
-  population.innerText = "Total Population: " + json.population;
+
+  //Total Population
+  population.innerHTML = `Total Population: ${json.population}`;
 
 	console.log(json.actuals.cases);
   //Total and New Cases in Savannah Metro
