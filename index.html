@@ -48,7 +48,14 @@
 
 									<!-- Sidebar -->
 									<header id="news">
-										<h2>News</h2></header>
+										<h2>News</h2>
+									</header>
+									<select id="news__dropdown" class="button alt">
+										<option value="local">Local</option>
+										<option value="state">State</option>
+										<option value="national">National</option>
+										<option value="global">Global</option>
+									</select>
 										
 									<div id="news__container"></div>	
 
@@ -63,11 +70,11 @@
 										<article>
 											<header id="stats">
 												
-												<h2>Savannah Metro Stats</h2></header>
+												<h2>Stats</h2></header>
 												<div id="stat__header">
 													
 													<p>The Savannah metropolitan is centered on Savannah, GA. Consisting of <b>Bryan, Chatham, and Effingham counties.</b>
-														The below stats are from <a href="https://covidactnow.org/data-api" target="blank">CovidActNow API</a>. They retrieve data comes from U.S. Department of Health and Human Services, the Centers for
+														The below stats are from <a href="https://covidactnow.org/data-api" target="blank">CovidActNow API</a>. They retrieve data from the U.S. Department of Health and Human Services, the Centers for
 														 Disease Control and Prevention, The New York Times, and official state and county dashboards.
 													</p>
 													<h3 id="population"></h3>
@@ -86,8 +93,8 @@
 													  <h3 id="totalDeaths"></h3>
 													  <h3 id="newDeaths"></h3>
 													</div>
-													
 													</div>
+													<p id="stat__caption"></p>
 												<p>The interactive map below shows the count of cases and deaths caused from coronavirus in the different counties of Georgia, United States. The table underneath the map displays similar data. Numbers might contradict due to the daily updates. Visit 
 													<a href="https://dph.georgia.gov/covid-19-daily-status-report" target="_blank">Georgia Department of Public Health</a> for the most recent updates and more.</p>
 											
@@ -142,8 +149,8 @@
 													   <img src="images\img8.jpg">
 													  </div>
 													
-													<span class="prev" id="prev"> &#x21e6; </span>
-													<span class="next" id="next"> &#x21e8; </span>
+													<span class="prev" id="prev"> &#10096; </span>
+													<span class="next" id="next"> &#10097; </span>
 													</div>
 
 

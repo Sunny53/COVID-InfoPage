@@ -4,6 +4,7 @@ var newCases = document.getElementById("newCases")
 var totalDeaths = document.getElementById("totalDeaths")
 var newDeaths = document.getElementById("newDeaths")
 var population = document.getElementById("population")
+var statCaption = document.getElementById('stat__caption')
 //Get Method from CovidActNow
 var API_key = "bef296005bd846e784d632e6d304a610"
 var cbsa_code = "42340"
@@ -30,10 +31,14 @@ fetch(url, {
   newCases.innerText = "New: " + json.actuals.newCases; 
   
   //Total and New Death in Savannah Metro
-  console.log(json.actuals.deaths)
   totalDeaths.innerText = "Total: " + json.actuals.deaths;
   newDeaths.innerText = "New: " + json.actuals.newDeaths;
+
+  //Stat caption
+  statCaption.innerText = `Updated: ${json.lastUpdatedDate}`;
+
 })
+.catch(error=> console.log('Error:', error))
 
 
 
@@ -43,9 +48,8 @@ fetch(url, {
 
 
 //APi parameters
-const api_key = "870061f7bf29680986c7953224cb9bd3";
-const q = 'coronavirus savannah';
-const url1 = `https://gnews.io/api/v4/search?q=${q}&max=5&country=us&lang=en&token=${api_key}`
+var q = 'coronavirus savannah';
+const url1 = `https://gnews.io/api/v4/search?q=${q}&max=5&country=us&lang=en&token=870061f7bf29680986c7953224cb9bd3`
 console.log(url);
 
 let newsContainer = document.getElementById("news__container");
@@ -78,3 +82,19 @@ fetch(url1)
   .catch(error => console.log("Error:", error))
 
   
+
+//Dropdown onchange
+let newsDropdown = document.getElementById('news__dropdown');
+
+newsDropdown.addEventListener('change', (e)=>{
+console.log(newsDropdown.value);
+
+const queryObject = {
+  local: 'coronavirus local',
+  state: 'coronavirus georgia',
+  national: 'coronavirus us',
+  global: 'coronavirus'
+}
+
+return q = queryObject[newsDropdown.value]
+})

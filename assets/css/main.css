@@ -3383,7 +3383,7 @@ input, select, textarea {
 	flex-flow: row wrap;
 	max-width: 600px;
 	margin: auto;
-	margin-bottom: 80px;
+	margin-bottom: 10px;
 	border-radius: 10px;
 	background:#f0f3ff;
 	box-shadow: 2px 2px 10px #1f1f1f ;
@@ -3393,9 +3393,19 @@ input, select, textarea {
 	text-align: center;
   }
   
+  #stat__caption{
+	  text-align: end;
+	  margin-right: 100px;
+  }
   
 
   /*News container */
+
+  #news__dropdown{
+	  margin: 10px;
+	  background-color: #0e688f;
+  }
+
   .news__article{
 	margin: 10px;
 	padding: 10px;
@@ -3436,7 +3446,7 @@ input, select, textarea {
 	width: 100%;
 	animation: fade 1.5s;
 	display: none;
-	padding: 20px;
+	padding: 0px;
 	text-align: center;
 	align-items: center;
 	justify-items: center;
@@ -3444,7 +3454,7 @@ input, select, textarea {
   }
 
   .carouselImgs img{
-	  max-width: 500px;
+	  max-width: 100%;
   }
   
   .prev, .next {
