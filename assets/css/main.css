@@ -3406,6 +3406,10 @@ input, select, textarea {
 	  background-color: #0e688f;
   }
 
+  #news__dropdown:hover{
+	  background-color: #1eb8fb;
+  }
+
   .news__article{
 	margin: 10px;
 	padding: 10px;
