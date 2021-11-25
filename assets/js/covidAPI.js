@@ -1,15 +1,16 @@
 //Variables
-var totalCases = document.getElementById("totalCases")
-var newCases = document.getElementById("newCases")
-var totalDeaths = document.getElementById("totalDeaths")
-var newDeaths = document.getElementById("newDeaths")
-var population = document.getElementById("population")
-var statCaption = document.getElementById('stat__caption')
+var totalCases = document.getElementById("totalCases");
+var newCases = document.getElementById("newCases");
+var totalDeaths = document.getElementById("totalDeaths");
+var newDeaths = document.getElementById("newDeaths");
+var population = document.getElementById("population");
+var statCaption = document.getElementById('stat__caption');
+var totalVax = document.getElementById('totalVax');
 //Get Method from CovidActNow
-var API_key = "bef296005bd846e784d632e6d304a610"
-var cbsa_code = "42340"
-var url = `https://api.covidactnow.org/v2/cbsa/${cbsa_code}.json?apiKey=${API_key}`
-console.log(url)
+var API_key = "bef296005bd846e784d632e6d304a610";
+var cbsa_code = "42340";
+var url = `https://api.covidactnow.org/v2/cbsa/${cbsa_code}.json?apiKey=${API_key}`;
+console.log(url);
 
 //Getting data from covidactnow API
 fetch(url, {
@@ -37,6 +38,10 @@ fetch(url, {
   //Stat caption
   statCaption.innerText = `Updated: ${json.lastUpdatedDate}`;
 
+  //
+  totalVax.innerText = `Initiated: ${json.actuals.vaccinationsInitiated}
+                        Completed: ${json.actuals.vaccinationsCompleted}
+                        Administered: ${json.actuals.vaccinesAdministered}`
 })
 .catch(error=> console.log('Error:', error))
 

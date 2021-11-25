@@ -3398,7 +3398,10 @@ input, select, textarea {
 	  margin-right: 100px;
   }
   
-
+  #totalVax{
+	 display: flex;
+	 flex-flow: row wrap;
+  }
   /*News container */
 
   #news__dropdown{
@@ -3439,6 +3442,7 @@ input, select, textarea {
 	max-width: 100%;
 	height: auto;
 	margin: 0 auto;
+	margin-bottom: 100px;
 	position: relative;
 	background-color: #f0f3ff;
 	border-radius: 1.5rem;
