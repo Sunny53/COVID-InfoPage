@@ -3401,6 +3401,7 @@ input, select, textarea {
   #totalVax{
 	 display: flex;
 	 flex-flow: row wrap;
+	 justify-content: space-around;
   }
   /*News container */
 

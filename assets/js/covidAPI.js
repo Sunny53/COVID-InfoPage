@@ -39,9 +39,9 @@ fetch(url, {
   statCaption.innerText = `Updated: ${json.lastUpdatedDate}`;
 
   //
-  totalVax.innerText = `Initiated: ${json.actuals.vaccinationsInitiated}
-                        Completed: ${json.actuals.vaccinationsCompleted}
-                        Administered: ${json.actuals.vaccinesAdministered}`
+  totalVax.innerHTML = `<div>Initiated: ${json.actuals.vaccinationsInitiated}</div>
+                        <div>Completed: ${json.actuals.vaccinationsCompleted}</div>
+                        <div>Total Administered: ${json.actuals.vaccinesAdministered}</div>`
 })
 .catch(error=> console.log('Error:', error))
 
