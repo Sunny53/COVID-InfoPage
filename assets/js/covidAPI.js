@@ -57,7 +57,7 @@ let newsDropdown = document.getElementById('news__dropdown');
 
 function newsfetch(q){
 
-const url1 = `https://gnews.io/api/v4/search?q=${q}&max=5&country=us&lang=en&token=870061f7bf29680986c7953224cb9bd3`
+const url1 = `https://gnews.io/api/v4/search?q=${q}&max=6&country=us&lang=en&token=870061f7bf29680986c7953224cb9bd3`
 console.log(url1);
 
 fetch(url1)
@@ -69,11 +69,11 @@ fetch(url1)
       newsArticle.classList.add('news__article');
       
       newsArticle.innerHTML =
-        `<h3 class="article__title">${i.title}</h3>
+        `<h4 class="article__title">${i.title}</h4>
             <img class="article__img" 
              alt="Article Image"	src=${i.image}></img>
             <p class="article__body">${i.description}</p>
-            <a href=${i.url} target="blank" class="button">Read More</a>
+            <div class="article__btn"><a href=${i.url} target="blank">Read More</a></div>
             `;
 
       newsContainer.appendChild(newsArticle);
@@ -81,20 +81,21 @@ fetch(url1)
     })
   })
 
-  .catch(error => console.log("Error:", error))
+  .catch(error => console.log("Error:", error));
 
   
 }
 
 //fetch onload
-window.onload(newsfetch('coronavirus savannah'))
+window.onload(newsfetch('coronavirus savannah'));
 
 
 //Dropdown onchange
 newsDropdown.addEventListener('change', (e)=>{
   
   newsContainer.innerHTML = " ";
-  q = e.target.value;
-  newsfetch(q);
-  })
+  var o = e.target.value;
+  console.log(o)
+  newsfetch(o);
+  });
   

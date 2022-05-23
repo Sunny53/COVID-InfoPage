@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid InfoPage</title>
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/external-line-zulfa-mahendra/48/000000/external-covid-the-new-normal-line-zulfa-mahendra-2.png" >
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">Covid InfoPage<span>&nbspby Sunny Patel</span></h1>
+        <nav class="nav_list">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="stats.html">Stats</a></li>
+                <li><a href="safety.html">Safety</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 class="title">Contact Form</h2>
+        <form id="form">
+            <div>
+              <label id="name-label" for="name"> Name</label><br>
+              <input type="text" name="name" id="name" class= "input-field" placeholder="Please Enter Name" required>
+            </div><br>
+        
+            <div>
+              <label id="email-label" for="name"> Email</label><br>
+              <input type="email" name="email" id="email" class="input-field" placeholder="Please Enter Email" required>
+            </div><br>
+        
+            <div>
+              <label id="dropdown-label" for="name"> Purpose for contact</label>
+              <div>
+                <select type="dropdown" name="status" id=dropdown class="dropdown">
+                    <option disabled value= rando>Select an Option</option>
+                    <option value= "Report bug">Report bug </option>
+                    <option value= "Request service">Request service </option>
+                    <option value= "Questions">Questions </option>
+                    <option value= "Other">Other </option>
+                </select>
+              </div>
+            </div><br>
+                  
+            <label id=closing-label for="name">Please list any additional questions or concerns below!</label><br>
+            <textarea id="commments" class="input-field" style="height:80px;max-width:300px;resize:vertical;" name="comment" placeholder="Enter here..."></textarea><br>
+            <div>
+              <button id="submit" type="submit">Submit</button>
+            </div>
+                  
+          </form>
+    </main>
+    <script>
+        var form = document.getElementById("form");
+        function sentMsg(){
+          alert("Thank you for your response!");
+        }
+
+        form.addEventListener("submit", sentMsg);
+    </script>
+        <script src="assets/js/main.js"></script>
+</body>
+</html>

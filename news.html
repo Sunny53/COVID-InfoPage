@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid InfoPage</title>
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/external-line-zulfa-mahendra/48/000000/external-covid-the-new-normal-line-zulfa-mahendra-2.png" >
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">Covid InfoPage<span>&nbspby Sunny Patel</span></h1>
+        <nav class="nav_list">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="stats.html">Stats</a></li>
+                <li><a href="safety.html">Safety</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <img class="img hero" src="images/news-hero.jpg">
+    <main>
+        <select id="news__dropdown">
+            <option value="coronavirus savannah">Local</option>
+            <option value="coronavirus georgia">State</option>
+            <option value="coronavirus us">National</option>
+            <option value="coronavirus">Global</option>
+            </select>
+            <div id="news__container"></div>
+    </main>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/covidAPI.js"></script>
+</body>
+</html>
