@@ -1,31 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Covid InfoPage</title>
-    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/external-line-zulfa-mahendra/48/000000/external-covid-the-new-normal-line-zulfa-mahendra-2.png" >
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://img.icons8.com/external-line-zulfa-mahendra/48/000000/external-covid-the-new-normal-line-zulfa-mahendra-2.png"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+  </head>
+  <body>
     <header>
-        <h1 class="title">Covid InfoPage<span>&nbspby Sunny Patel</span></h1>
-        <nav class="nav_list">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="stats.html">Stats</a></li>
-                <li><a href="safety.html">Safety</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+      <h1 class="title">Covid InfoPage<span>&nbspby Sunny Patel</span></h1>
+      <nav class="nav_list">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="stats.html" class="active">Stats</a></li>
+          <li><a href="safety.html">Safety</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </header>
-    <img class="img hero" src="https://images.unsplash.com/photo-1604948067797-fe4288ffef04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=915&q=80">
     <main>
-        <iframe max-width="622" height="350" src="https://www.youtube.com/embed/g7ilXCHld7g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div data-mediatype='widget' data-mediaid='426456' data-apiroot='tools.cdc.gov/api' data-cdc-widget='syndicationIframe'></div><script src='https://www.cdc.gov/TemplatePackage/contrib/widgets/tp-widget-external-loader.js' ></script>
-        <div data-cdc-widget="HDFinderCOVIDVaccination" data-theme="theme1" data-widget-max-height="629px"></div><script src="https://www.cdc.gov/TemplatePackage/contrib/widgets/tp-widget-external-loader.js?ac=20210201"></script>
+      <article class="local">
+        <h2>Savannah</h2>
+        <div id="stat__header">
+          <p>
+            The Savannah metropolitan is centered on Savannah, GA. Consisting of
+            <b>Bryan, Chatham, and Effingham counties.</b> The below stats are
+            from <a href="https://covidactnow.org/data-api" target="blank">CovidActNow API</a>. They
+            retrieve data from the U.S. Department of Health and Human
+            Services, the Centers for Disease Control and Prevention, The New
+            York Times, and official state and county dashboards.
+          </p>
+          <p id="localPop"></p>
+        </div>
+
+        <div class="stat__container">
+          <div id="localCases" class="stat__item"></div>
+          <div id="localDeaths" class="stat__item"></div>
+          <div id="localVax" class="stat__item"></div>
+        </div>
+        
+        <p id="local__caption"></p>
+        </article>
+
+      <article class="state">
+        <h2>Georgia</h2>
+        <div id="stat__header">
+          <p></p>
+          <p id="statePop"></p>
+        </div>
+
+        <div class="stat__container">
+          <div id="stateCases" class="stat__item"></div>
+          <div id="stateDeaths" class="stat__item"></div>
+          <div id="stateVax" class="stat__item"></div>
+        </div>         
+        <p id="state__caption"></p>
+        <div>
+          <iframe
+            src="https://ajcnewsapps.s3.amazonaws.com/2020/covid-ga-counties-latest/index.html?1602784850833&amp;
+    initialWidth=489&amp;childId=iframe-holder&amp;parentTitle=Georgia%20coronavirus%20map%20and%20updates%3A%20Reported%20coronavirus%20cases&amp;
+    parentUrl=https%3A%2F%2Fwww.ajc.com%2Fnews%2Fstate--regional%2Fcoronavirus-georgia-the-latest-figures%2FHXfoEnBqHW7i0AJpYArL0J%2F"
+            width="100%"
+            scrolling="no"
+            marginheight="0"
+            frameborder="0"
+            height="899px"
+          >
+          </iframe>
+        </div>
+      
+      </article>
+
+      <article class="national">
+        <h2>United States</h2>
+        <div id="stat__header">
+
+          <p id="natPop"></p>
+        </div>
+
+        <div class="stat__container">
+          <div id="natCases" class="stat__item"></div>
+          <div id="natDeaths" class="stat__item"></div>
+          <div id="natVax" class="stat__item"></div>
+        </div>
+
+        <p id="nat__caption"></p>
+      </article>
     </main>
     <script src="assets/js/main.js"></script>
-</body>
+    <script src="assets/js/covidAPI.js"></script>
+  </body>
 </html>

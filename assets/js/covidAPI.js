@@ -1,101 +1,104 @@
 //Variables
-var totalCases = document.getElementById("totalCases");
-var newCases = document.getElementById("newCases");
-var totalDeaths = document.getElementById("totalDeaths");
-var newDeaths = document.getElementById("newDeaths");
-var population = document.getElementById("population");
-var statCaption = document.getElementById('stat__caption');
-var totalVax = document.getElementById('totalVax');
-//Get Method from CovidActNow
+var localCases = document.getElementById("localCases");
+var localDeaths = document.getElementById("localDeaths");
+var localPop = document.getElementById("localPop");
+var localCaption = document.getElementById("local__caption");
+var localVax = document.getElementById("localVax");
+
+var stateCases = document.getElementById("stateCases");
+var stateDeaths = document.getElementById("stateDeaths");
+var statePop = document.getElementById("statePop");
+var stateCaption = document.getElementById("state__caption");
+var stateVax = document.getElementById("stateVax");
+
+var natCases = document.getElementById("natCases");
+var natDeaths = document.getElementById("natDeaths");
+var natPop = document.getElementById("natPop");
+var natCaption = document.getElementById("nat__caption");
+var natVax = document.getElementById("natVax");
+
+//local stats api variables
 var API_key = "bef296005bd846e784d632e6d304a610";
 var cbsa_code = "42340";
-var url = `https://api.covidactnow.org/v2/cbsa/${cbsa_code}.json?apiKey=${API_key}`;
-console.log(url);
+var state = "GA";
 
-//Getting data from covidactnow API
-fetch(url, {
-	method: 'GET'
+var localUrl = `https://api.covidactnow.org/v2/cbsa/${cbsa_code}.json?apiKey=${API_key}`;
+var stateUrl = `https://api.covidactnow.org/v2/state/${state}.json?apiKey=${API_key}`;
+var natUrl = `https://api.covidactnow.org/v2/country/US.json?apiKey=${API_key}`;
+//Get method for local data
+fetch(localUrl, {
+  method: "GET",
 })
+  .then((response) => response.json())
 
-.then(response => response.json())
+  .then((json) => {
+    localPop.innerHTML = `Total Population: ${json.population}`;
 
-.then(json=>{
+    localCases.innerHTML = `<h3>Cases</h3>
+                        <div>Total:&nbsp<span class="num">${json.actuals.cases}</span></div>
+                        <div>New:&nbsp<span class="num">${json.actuals.newCases}</span></div>`;
 
-	console.log(json.population);
+    localDeaths.innerHTML = `<h3>Deaths</h3>
+                        <div>Total:&nbsp<span class="num">${json.actuals.deaths}</span></div>
+                        <div>New:&nbsp<span class="num">${json.actuals.newDeaths}</span></div>`;
 
-  //Total Population
-  population.innerHTML = `Total Population: ${json.population}`;
+    localVax.innerHTML = `<h3>Vaccinations</h3>
+                        <div>Initiated:&nbsp<span class="num">${json.actuals.vaccinationsInitiated}</span></div>
+                        <div>Completed:&nbsp<span class="num">${json.actuals.vaccinationsCompleted}</span></div>
+                        <div>Administered:&nbsp<span class="num">${json.actuals.vaccinesAdministered}</span></div>`;
 
-	console.log(json.actuals.cases);
-  //Total and New Cases in Savannah Metro
-  totalCases.innerText ="Total: " + json.actuals.cases;
-  newCases.innerText = "New: " + json.actuals.newCases; 
-  
-  //Total and New Death in Savannah Metro
-  totalDeaths.innerText = "Total: " + json.actuals.deaths;
-  newDeaths.innerText = "New: " + json.actuals.newDeaths;
-
-  //Stat caption
-  statCaption.innerText = `Updated: ${json.lastUpdatedDate}`;
-
-  //
-  totalVax.innerHTML = `<div>Initiated: ${json.actuals.vaccinationsInitiated}</div>
-                        <div>Completed: ${json.actuals.vaccinationsCompleted}</div>
-                        <div>Total Administered: ${json.actuals.vaccinesAdministered}</div>`
-})
-.catch(error=> console.log('Error:', error))
-
-
-
-//Getting Data from Gnews API
-
-//APi parameters
-let newsContainer = document.getElementById("news__container");
-let newsDropdown = document.getElementById('news__dropdown');
-
-//API call
-
-function newsfetch(q){
-
-const url1 = `https://gnews.io/api/v4/search?q=${q}&max=6&country=us&lang=en&token=870061f7bf29680986c7953224cb9bd3`
-console.log(url1);
-
-fetch(url1)
-  .then(response => response.json())
-  .then(data => {
-    data.articles.map(i => {
-      
-      let newsArticle = document.createElement("div");
-      newsArticle.classList.add('news__article');
-      
-      newsArticle.innerHTML =
-        `<h4 class="article__title">${i.title}</h4>
-            <img class="article__img" 
-             alt="Article Image"	src=${i.image}></img>
-            <p class="article__body">${i.description}</p>
-            <div class="article__btn"><a href=${i.url} target="blank">Read More</a></div>
-            `;
-
-      newsContainer.appendChild(newsArticle);
-
-    })
+    localCaption.innerText = `Updated: ${json.lastUpdatedDate}`;
   })
+  .catch((error) => console.log("Error:", error));
 
-  .catch(error => console.log("Error:", error));
+//Get method for state data
+fetch(stateUrl, {
+  method: "GET",
+})
+  .then((response) => response.json())
 
-  
-}
+  .then((json) => {
+    statePop.innerHTML = `Total Population: ${json.population}`;
 
-//fetch onload
-window.onload(newsfetch('coronavirus savannah'));
+    stateCases.innerHTML = `<h3>Cases</h3>
+                        <div>Total:&nbsp<span class="num">${json.actuals.cases}</span></div>
+                        <div>New:&nbsp<span class="num">${json.actuals.newCases}</span></div>`;
 
+    stateDeaths.innerHTML = `<h3>Deaths</h3>
+                        <div>Total:&nbsp<span class="num">${json.actuals.deaths}</span></div>
+                        <div>New:&nbsp<span class="num">${json.actuals.newDeaths}</span></div>`;
 
-//Dropdown onchange
-newsDropdown.addEventListener('change', (e)=>{
-  
-  newsContainer.innerHTML = " ";
-  var o = e.target.value;
-  console.log(o)
-  newsfetch(o);
-  });
-  
+    stateVax.innerHTML = `<h3>Vaccinations</h3>
+                        <div>Initiated:&nbsp<span class="num">${json.actuals.vaccinationsInitiated}</span></div>
+                        <div>Completed:&nbsp<span class="num">${json.actuals.vaccinationsCompleted}</span></div>
+                        <div>Administered:&nbsp<span class="num">${json.actuals.vaccinesAdministered}</span></div>`;
+
+    localCaption.innerText = `Updated: ${json.lastUpdatedDate}`;
+  })
+  .catch((error) => console.log("Error:", error));
+
+//Get method for state data
+fetch(natUrl, {
+  method: "GET",
+})
+  .then((response) => response.json())
+
+  .then((json) => {
+    natPop.innerHTML = `Total Population: ${json.population}`;
+
+    natCases.innerHTML = `<h3>Cases</h3>
+                        <div>Total:&nbsp<span class="num">${json.actuals.cases}</span></div>
+                        <div>New:&nbsp<span class="num">${json.actuals.newCases}</span></div>`;
+
+    natDeaths.innerHTML = `<h3>Deaths</h3>
+                        <div>Total:&nbsp<span class="num">${json.actuals.deaths}</span></div>
+                        <div>New:&nbsp<span class="num">${json.actuals.newDeaths}</span></div>`;
+
+    natVax.innerHTML = `<h3>Vaccinations</h3>
+                        <div>Initiated:&nbsp<span class="num">${json.actuals.vaccinationsInitiated}</span></div>
+                        <div>Completed:&nbsp<span class="num">${json.actuals.vaccinationsCompleted}</span></div>
+                        <div>Administered:&nbsp<span class="num">${json.actuals.vaccinesAdministered}</span></div>`;
+
+    localCaption.innerText = `Updated: ${json.lastUpdatedDate}`;
+  })
+  .catch((error) => console.log("Error:", error));
