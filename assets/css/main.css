@@ -21,6 +21,9 @@ h1 {
 span {
   font-weight: 100;
 }
+.home__container span{
+  margin-left: 25px;
+}
 
 p {
   text-indent: 40px;
@@ -39,14 +42,21 @@ p {
   list-style-type: none;
   padding: 15px;
 }
+a{
+  text-decoration: none;
+}
 nav a {
   text-decoration: none;
   display: block;
   padding: 10px;
   color: silver;
 }
+.home__container:hover{
+  background-color:silver;
+}
 .hero {
   width: 100%;
+  height: 600px;
 }
 a:hover{
   color: skyblue;
@@ -56,7 +66,20 @@ a:hover{
   color: #37c0fb;
   text-decoration: underline;
 }
-
+.home__container{
+  padding: 20px;
+  border: #1f1f1f 1px solid;
+}
+.home__container a{
+  width: 100%;
+  display: block;
+}
+.odd{
+  background-color: beige;
+}
+.even{
+  background-color: #f0f3ff;
+}
 /**/
 main {
   max-width: 1000px;
@@ -69,10 +92,12 @@ main {
 .symptoms-list {
   margin: 25px 0px 25px 15px;
   list-style-type: square;
+  border: #1f1f1f solid 2px;
+  padding: 25px;
+  background-color: #f0f3ff;
 }
 .safety-list li,
 .symptoms-list li {
-  margin-top: 5px;
   margin-left: 25px;
 }
 
@@ -80,57 +105,26 @@ main {
 .hidden {
   display: none;
 }
-th {
-  background-color: blanchedalmond;
-  padding: 20px;
-  margin: 10px 0 10px 0;
-  border-radius: 100px;
-  box-shadow: 1px 1px 5px gray;
-}
 body {
-  background-color: whitesmoke;
+  background-image: linear-gradient(to bottom right, bisque, skyblue);
 }
 .poster {
   max-width: 300px;
 }
 
-/*Resources Grid*/
-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: center;
-}
-th {
-  width: 33%;
-  background-image: linear-gradient(to bottom right, bisque, skyblue);
-}
-
-td {
-  border: 0.5px black solid;
-  border-radius: 5px;
-  background-color: skyblue;
-  box-shadow: 1px 1px 2px gray;
-}
-
-td a {
-  padding: 10px;
-  display: block;
-  text-decoration: none;
-  color: black;
-}
-
-td:hover {
-  background-color: grey;
-}
-
 /*Contact*/
 form {
-  background-image: linear-gradient(to bottom right, bisque, skyblue);
+  background-color:aliceblue;
   padding: 25px;
+  max-width: 500px;
+  margin: auto;
+  border-radius: 5px;
+  border: #1f1f1f 2px solid;
 }
 form input,select,textarea,#submit{
   padding: 8px;
-  min-width: 200px;
+  width: 100%;
+  margin: auto;
 }
 label {
   font-weight: bold;
@@ -138,7 +132,10 @@ label {
 #submit {
   font-weight: bold;
 }
-
+.form__item{
+  margin: auto;
+  max-width: 400px;
+}
 /*Contact Form*/
 
 @media only screen and (max-width: 700px) {
@@ -167,7 +164,7 @@ article{
   padding: 25px;
   border-radius: 10px;
   background: #f0f3ff;
-  box-shadow: 2px 2px 10px #1f1f1f;
+  border: #1f1f1f 2px solid;
 }
 .num {
   float: right;
@@ -205,24 +202,24 @@ h3 {
   padding-left: 80px;
   border-radius: 5px;
   margin: 20px;
-  background-image:linear-gradient(to bottom right, #f0f3ff, #37c0fb );
-  background-color: #f0f3ff;
+  background-color:#f0f3ff;
+  border: #1f1f1f solid 2px;
 }
 
 .news__article {
   max-width: 250px;
   height: 400px;
   margin: 25px;
-  background-image:linear-gradient(to bottom right, #f0f3ff, #37c0fb );
+  background-color:#f0f3ff;
   border-radius: 10px;
-  box-shadow: 1px 1px 5px #1f1f1f;
+  border: #1f1f1f solid 2px;
   display: flex;
   flex-direction: column;
 }
 
 .article__title {
   border-bottom: black solid 1px;
-  background-color: navy;
+  background-color:royalblue;
   color: whitesmoke;
   margin: 0;
   padding: 12px;
@@ -244,7 +241,7 @@ h3 {
 .article__btn a {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  background-color: navy;
+  background-color:royalblue;
   text-decoration: none;
   padding: 12px;
   display: block;
@@ -253,7 +250,7 @@ h3 {
 }
 
 .article__btn a:hover {
-  background-color: rgb(68, 123, 145);
+  background-color:black;
   color: white;
 }
 
@@ -266,7 +263,6 @@ h3 {
   background-color: #f0f3ff;
   border-radius: 1.5rem;
   overflow: hidden;
-  box-shadow: 1px 1px 5px #333;
 }
 
 .carouselImgs {

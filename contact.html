@@ -21,21 +21,23 @@
         </nav>
     </header>
     <main>
-        <h2 class="title">Contact Form</h2>
         <form id="form">
-            <div>
+          <div class="form__item">
+            <h3 class="title">Contact Form</h3>
+            <h5>Please fill out this form to send a message if you have questions or concerns!</h5>
+          </div><br><br>
+            <div class="form__item">
               <label id="name-label" for="name"> Name</label><br>
               <input type="text" name="name" id="name" class= "input-field" placeholder="Please Enter Name" required>
             </div><br>
         
-            <div>
+            <div class="form__item">
               <label id="email-label" for="name"> Email</label><br>
               <input type="email" name="email" id="email" class="input-field" placeholder="Please Enter Email" required>
             </div><br>
         
-            <div>
-              <label id="dropdown-label" for="name"> Purpose for contact</label>
-              <div>
+            <div class="form__item">
+              <label id="dropdown-label" for="name"> Purpose for contact</label><br>
                 <select type="dropdown" name="status" id=dropdown class="dropdown">
                     <option disabled value= rando>Select an Option</option>
                     <option value= "Report bug">Report bug </option>
@@ -43,12 +45,12 @@
                     <option value= "Questions">Questions </option>
                     <option value= "Other">Other </option>
                 </select>
-              </div>
             </div><br>
-                  
-            <label id=closing-label for="name">Please list any additional questions or concerns below!</label><br>
-            <textarea id="commments" class="input-field" style="height:80px;max-width:300px;resize:vertical;" name="comment" placeholder="Enter here..."></textarea><br>
-            <div>
+            <div class="form__item">      
+            <label id=closing-label for="name">Message</label><br>
+            <textarea id="commments" class="input-field" style="height:80px;resize:vertical;" name="comment" placeholder="Enter here..."></textarea><br>
+          </div>
+            <div class="form__item">
               <button id="submit" type="submit">Submit</button>
             </div>
                   
