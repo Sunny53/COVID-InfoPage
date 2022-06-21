@@ -31,3 +31,13 @@ window.onload = function () {
     nextSlide();
   })
 }
+
+//Hamburger javascript//
+
+var hamburger = document.getElementById('hamburger');
+var nav = document.getElementById('nav_list');
+
+hamburger.addEventListener('click', ()=>{
+  nav.classList.toggle('tgl');
+  hamburger.classList.toggle('close-tgl');
+})

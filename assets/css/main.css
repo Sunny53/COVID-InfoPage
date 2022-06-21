@@ -44,6 +44,7 @@ p {
 }
 a{
   text-decoration: none;
+  transition: all 0.3s ease-in-out;
 }
 nav a {
   text-decoration: none;
@@ -53,13 +54,13 @@ nav a {
 }
 .home__container:hover{
   background-color:silver;
+  transition: all .5s ease-in-out;
 }
 .hero {
   width: 100%;
 }
 a:hover{
   color: skyblue;
-  transition-duration: .5s;
 }
 .active{
   color: #37c0fb;
@@ -79,6 +80,57 @@ a:hover{
 .even{
   background-color: #f0f3ff;
 }
+#hamburger{
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  display: none;
+}
+#hamburger:hover{
+  cursor: pointer;
+}
+.bar{
+  display: block;
+  width: 25px;
+  height: 2px;
+  margin: 5px auto;
+  background-color: #1f1f1f;
+  transition: all 0.3s ease-in-out;
+}
+/**/
+@media only screen and (max-width: 700px){
+  header{
+    text-align: left;
+  }
+  #hamburger{
+    display: block;
+  }
+  .tgl{
+    display: none;
+    transition: all 0.3s ease-in-out;
+  }
+  .nav_list ul{
+    flex-direction: column;
+    text-align: center;
+    padding: 0%;
+  }
+  .nav_list a:hover{
+    background-color: #444444;
+    
+  }
+  .hamburger.close-tgl .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.close-tgl .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.close-tgl .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+}
+
+
+
 /**/
 main {
   max-width: 1000px;
@@ -206,6 +258,7 @@ h3 {
   margin: 20px;
   background-color:#f0f3ff;
   border: #1f1f1f solid 2px;
+  
 }
 
 .news__article {
@@ -249,6 +302,7 @@ h3 {
   display: block;
   color: whitesmoke;
   font-weight: 700;
+  transition: all 0.3s ease-in-out;
 }
 
 .article__btn a:hover {
@@ -313,3 +367,5 @@ h3 {
     opacity: 1;
   }
 }
+
+
