@@ -1,0 +1,13 @@
+# Azure credentials
+backend/config.py
+
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# Database
+*.db
+
+# Logs
+*.log
