@@ -32,7 +32,7 @@ function newsfetch(q) {
 }
 
 //fetch onload
-newsfetch("coronavirus savannah");
+newsfetch("coronavirus global");
 console.log(newsDropdown.value)
 //Dropdown onchange
 newsDropdown.addEventListener('change', (e) => {
