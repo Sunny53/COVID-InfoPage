@@ -1,0 +1,47 @@
+{
+  "Message": "",
+  "Global": {
+    "NewConfirmed": 12345,
+    "TotalConfirmed": 12345678,
+    "NewDeaths": 234,
+    "TotalDeaths": 567890,
+    "NewRecovered": 5678,
+    "TotalRecovered": 9876543
+  },
+  "Countries": [
+    {
+      "Country": "USA",
+      "CountryCode": "US",
+      "Slug": "united-states",
+      "NewConfirmed": 5432,
+      "TotalConfirmed": 3456789,
+      "NewDeaths": 123,
+      "TotalDeaths": 123456,
+      "NewRecovered": 2345,
+      "TotalRecovered": 2345678
+    },
+    {
+      "Country": "India",
+      "CountryCode": "IN",
+      "Slug": "india",
+      "NewConfirmed": 4321,
+      "TotalConfirmed": 2345678,
+      "NewDeaths": 98,
+      "TotalDeaths": 98765,
+      "NewRecovered": 3456,
+      "TotalRecovered": 1987654
+    },
+    {
+      "Country": "Brazil",
+      "CountryCode": "BR",
+      "Slug": "brazil",
+      "NewConfirmed": 3456,
+      "TotalConfirmed": 1987654,
+      "NewDeaths": 76,
+      "TotalDeaths": 87654,
+      "NewRecovered": 1234,
+      "TotalRecovered": 1654321
+    }
+  ],
+  "Date": "2024-01-15T00:00:00Z"
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Data Pipeline Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .pipeline-steps {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .step {
+            text-align: center;
+            flex: 1;
+        }
+        .step-arrow {
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 24px;
+            color: #007acc;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-top: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #007acc;
+            color: white;
+        }
+        tr:hover {
+            background: #f5f5f5;
+        }
+        .status {
+            text-align: center;
+            margin: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .loading {
+            text-align: center;
+            margin: 40px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🦠 COVID-19 Data Pipeline Demo</h1>
+    
+    <div class="pipeline-steps">
+        <div class="step">
+            <h3>📁 JSON File</h3>
+            <p>Sample data source</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+            <h3>🔄 Transform</h3>
+            <p>SQLite Database</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+            <h3>🌐 Flask API</h3>
+            <p>REST Endpoint</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+            <h3>📊 Dashboard</h3>
+            <p>Live Display</p>
+        </div>
+    </div>
+
+    <div id="status" class="status">⏳ Connecting to Flask API...</div>
+
+    <div id="loading" class="loading">⏳ Loading COVID-19 data...</div>
+
+    <table id="covid-table" style="display: none;">
+        <thead>
+            <tr>
+                <th>🏴 Country</th>
+                <th>📈 Confirmed</th>
+                <th>💀 Deaths</th>
+                <th>✅ Recovered</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <!-- Populated by JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 COVID pipeline demo starting...');
+            
+            fetch('http://localhost:5000/api/covid-data')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(result => {
+                    console.log('✅ API Response:', result);
+                    
+                    if (result.success) {
+                        // Update status
+                        document.getElementById('status').textContent = '✅ Connected to Flask API';
+                        document.getElementById('status').className = 'status success';
+                        
+                        // Hide loading
+                        document.getElementById('loading').style.display = 'none';
+                        
+                        // Show table
+                        document.getElementById('covid-table').style.display = 'table';
+                        
+                        // Populate data
+                        const tbody = document.getElementById('table-body');
+                        result.data.forEach(country => {
+                            const row = tbody.insertRow();
+                            row.insertCell(0).innerHTML = `<strong>${country.country}</strong>`;
+                            row.insertCell(1).textContent = country.confirmed.toLocaleString();
+                            row.insertCell(2).textContent = country.deaths.toLocaleString();
+                            row.insertCell(3).textContent = country.recovered.toLocaleString();
+                        });
+                        
+                        // Add summary
+                        const summary = document.createElement('div');
+                        summary.className = 'status success';
+                        summary.style.marginTop = '20px';
+                        summary.innerHTML = `✅ Pipeline successful! Loaded ${result.data.length} countries`;
+                        document.body.appendChild(summary);
+                    } else {
+                        throw new Error(result.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('❌ Error:', error);
+                    const status = document.getElementById('status');
+                    status.textContent = `❌ Error: ${error.message}`;
+                    status.className = 'status error';
+                    
+                    const loading = document.getElementById('loading');
+                    loading.textContent = 'Failed to load data';
+                });
+        });
+    </script>
+</body>
+</html>
