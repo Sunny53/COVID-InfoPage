@@ -20,8 +20,11 @@ The application includes:
 
 ## Tech Stack
 **Frontend**: HTML5, CSS3, JavaScript
+
 **Backend**: Python, SQLite, Flask, Flask-CORS
+
 **Tools**: Git/GitHub, VS Code, Azure Blob Storage
+
 **Data Source**: COVID-19 data is sourced from **COVID Act Now**, a nonprofit, open-source health initiative: https://apidocs.covidactnow.org/
 
 The COVID Act Now API stopped updating as of May 16, 2024, as active COVID tracking was discontinued.
@@ -29,32 +32,6 @@ The COVID Act Now API stopped updating as of May 16, 2024, as active COVID track
 COVID-related news is sourced from a RapidAPI news provider, which continues to update.
 
 For demonstration purposes, sample data is ingested and stored locally in SQLite for the data pipeline.
-
-## Live Demos
-
-**Home** 
-
-Landing Overview and general COVID information
-
-**Stats**
-
-Updated case counts at local, state, and national levels
-
-**Safety**
-
-Safety precautions and vaccine guidance
-
-**News**
-
-Recent COVID-related news
-
-**Contact**
-
-Contact form & general contact details
-
-**Demo**
-
-Backend pipeline demonstration
 
 ## Repository Structure
 
@@ -98,6 +75,7 @@ python transform.py
 open frontend/pipeline-demo.html
 ```
 The pipeline demo fetches from `localhost:5000` and requires the Flask server to be running.
+
 GitHub Pages is static hosting and cannot run Flask. **It only works locally**.
 
 ## Backend Pipeline Demo
@@ -109,11 +87,16 @@ The pipeline demonstrates an ETL process:
 
 # License
 This project is licensed under Creative Commons Attribution 3.0 Unported License.
+
 See license.txt for details
 
 # Author
 **Sunny Patel**
+
 Technical portfolio: https://sunny53.github.io/
+
 GitHub: https://github.com/Sunny53
+
 Contact: sunnykp5397@gmail.com
+
 
